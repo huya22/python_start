@@ -98,14 +98,33 @@
 # print(sentence3)
 
 #슬라이싱
-jumin = "990120-1234567"
+# jumin = "990120-1234567"
 
-print("성별 : " + jumin[7])
-print("연 : " + jumin[0:2])  # 0부터 2직전 까지 즉 0과 1을 의미한다. 
-print("월 : " + jumin[2:4])
-print("일 : " + jumin[4:6])
-print("생년월일 : " + jumin[:6]) #처음부터 6직전까지의 값을 의미한다. 
-print("뒤 7자리 : " + jumin[7:14])
-print("뒤 7자리 : " + jumin[7:]) #7번째 부터 마지막까지의 값을 의미한다.  
-print("뒤 7자리 : " + jumin[-7:]) #가장 뒤에 숫자가 -1번째 이다. 즉 맨뒤에서 7번째 부터 출력
+# print("성별 : " + jumin[7])
+# print("연 : " + jumin[0:2])  # 0부터 2직전 까지 즉 0과 1을 의미한다. 
+# print("월 : " + jumin[2:4])
+# print("일 : " + jumin[4:6])
+# print("생년월일 : " + jumin[:6]) #처음부터 6직전까지의 값을 의미한다. 
+# print("뒤 7자리 : " + jumin[7:14])
+# print("뒤 7자리 : " + jumin[7:]) #7번째 부터 마지막까지의 값을 의미한다.  
+# print("뒤 7자리 : " + jumin[-7:]) #가장 뒤에 숫자가 -1번째 이다. 즉 맨뒤에서 7번째 부터 출력
+
+#문자열 처리 함수
+# python = "python is Amazing"
+# print(python.lower())                     #전부 대문자로 출력
+# print(python.upper())                     #전부 소문자로 출력
+# print(python[0].isupper())                #0번째가 대문자인가
+# print(len(python))                        #python 이라는 변수의 길이는 몇인가
+# print(python.replace("python", "java"))   #python 이라는 단어를 java로 변경
+
+# index = python.index("n")                 #n이 처음 나오는 위치를 찾는다.
+# print(index)                              #5출력
+# index = python.index("n", index + 1)      #n이 처음 나오는 위치를 찾는데 index + 1인 값 부터 시작 즉 index = 5이고 + 1이므로 6부터 시작하여 n이 있는 위치 출력
+# print(index)                              #15출력
+
+# print(python.find("java"))                #원하는 값이 없으면 -1 출력. 뒤에 계속 다른 것들이 나오면 프로그램은 계속 돌아간다. 
+# # print(python.index("java"))               #원하는 값이 없으면 오류가 출력되어 버린다. 그리고 프로그램이 종료 되어 버린다.
+# print(python.count("n"))                  #n이 몇번 찍히는지 출력한다.
+
+
 
