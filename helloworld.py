@@ -82,7 +82,7 @@
 # # print(randrange(1,46)) # 1~45 이하의 값들 중 랜덤한 값을 출력한다. 46을 포함하지 않는다.
 # # print(randint(1,45))   # 1~45 이하의 값들 중 랜덤한 값을 출력한다. 45를 포함한다. 
 
-#     #퀴즈
+#     #퀴즈 2
 # print("오프라인 스터디 모임 날짜는 매월" ,randrange(4,29), "일로 선정되었습니다.")
 # print("오프라인 스터디 모임 날짜는 매월" ,randint(4,28), "일로 선정되었습니다.")
 
@@ -123,8 +123,128 @@
 # print(index)                              #15출력
 
 # print(python.find("java"))                #원하는 값이 없으면 -1 출력. 뒤에 계속 다른 것들이 나오면 프로그램은 계속 돌아간다. 
-# # print(python.index("java"))               #원하는 값이 없으면 오류가 출력되어 버린다. 그리고 프로그램이 종료 되어 버린다.
+# # print(python.index("java"))             #원하는 값이 없으면 오류가 출력되어 버린다. 그리고 프로그램이 종료 되어 버린다.
 # print(python.count("n"))                  #n이 몇번 찍히는지 출력한다.
 
+#문자열 포맷
+# print("a" + "b")       #이러한 방법 말고
+# print("a", "b")        #이러한 방법 말고
 
+#     #방법 1   이런식으로 %d는 숫자 %s는 문자로 사용 가능하다. 
+# print("나는 %d 살입니다." % 20)                    #integer 정수만 가능
+# print("나는 %s을 좋아해요" % "파이썬")               #string 문자열만 가능
+# print("Apple 은 %c로 시작해요." % "A")             #char 문자만 가능
+# print("나는 %s 색과 %s 색을 좋아해요." % ("파란", "삘긴"))
 
+#     #방법 2 {} 사용하는 방법
+# print("나는 {} 살입니다." .format(20))
+# print("나는 {}색과 {} 색을 좋아해요." .format("파란", "빨간"))            
+# print("나는 {0}색과 {1} 색을 좋아해요." .format("파란", "빨간"))         #순서 지정 기능
+# print("나는 {1}색과 {0} 색을 좋아해요." .format("파란", "빨간"))         #순서 지정 기능
+
+#     #방법 3
+# print("나는 {age} 살이며, {color} 색을 좋아해요." .format(age = 20, color="빨간"))
+# print("나는 {age} 살이며, {color} 색을 좋아해요." .format(color="빨간", age = 20))
+
+#     #방법 4 (python v3.6 이상~)
+# age = 20
+# color = "빨간"
+# print(f"나는 {age} 살이며, {color} 색을 좋아해요.")       #오 신기하다 age랑 color 변수를 알아서 찾아 쓰네
+
+#탈출 문자
+# print("백문이 불여일견 \n백견이 불여일타")
+#     # 저는 "나도 코딩" 입니다.  이렇게 출력을 하고 싶다면
+# print('저는 "나도 코딩" 입니다.')                       #이렇게 하면 된다. 
+# print("저는 \"나도코딩\" 입니다.")                      #혹은 이렇게 \" 으로 감싸주면 되는군
+# print('저는 \"나도 코딩\" 입니다.')
+
+# print("저는 '나도 코딩' 입니다.")
+# print('저는 \'나도 코딩\' 입니다.')
+# print("저는 \'나도 코딩\' 입니다.")
+
+#     # \\ :  문장 내에서 \ 하나로 취급한다. 
+# print("c:\\User\\Desktop\\huya")                   #c:\User\Desktop\huya    이렇게 출력된다. 
+
+#     # \r : 커서를 맨 앞으로 이동
+# print("Red Apple\rPineWa ")                          # \r을 만나면 맨 앞으로 커서가 이동하여 거기서 부터 다시 출력을 하는 것
+#                                                      # 실행 결과는 PineWa le 이다.
+
+#     # \b : 백스페이스 (한 글자 삭제)
+# print("Redd\b Apple")                                #d 하나가 삭제된다.
+
+#     # \t : 탭 기능
+# print("Red\tApple")                                    #Red와 Apple 사이에 탭을 누른 효과를 나타냄
+
+    #퀴즈 3 사이트 별로 비밀번호를 만들어 주는 프로그램을 작성하기오
+    # 예) http://naver.com
+    #규칙1: http://부분은 제외 => naver.com
+    #규칙2: 처음 만나는 점(.) 이후 부분은 제외 => naver
+    #규칙3: 남은 글자 중 처음 세자리 + 글자 갯수 + 글자 내 'e' 갯수 + "!"로 구성
+    #           (nav)              (5)           (1)        (!)
+    #예) 생성된 비밀번호 : nav51!
+
+#     #나의 풀이
+# site = "http://naver.com"
+# print(site[7:10] +  str(site.index(".") - 7) + str(site.count("e")) + "!")
+
+#     #수업에서의 풀이
+
+# url = "http://naver.com"
+# my_str = url.replace("http://", "")    #규칙1 : 앞 부분 삭제
+# my_str = my_str[:my_str.index(".")]    #규칙2 : my_str[0:5] naver만 따오게 된것
+# password = my_str[:3] + str(len(my_str)) + str(my_str.count("e")) + "!"
+# print("{0}의 비밀번호는 {1} 입니다.".format(url, password))
+
+# 리스트 
+
+# subway = ["유재석", "조세호", "박명수"]           
+# print(subway)                                #결과는 ['유재석', '조세호', '박명수']
+
+#     #조세호씨가 몇 번째 칸에 타고 있는가?
+# print(subway.index("조세호"))                  #결과는 1
+
+#     #하하씨가 다음 정류장에서 다음 칸에 탐
+# subway.append("하하")                          #append는 더하는 기능이다.
+# print(subway)                                 #결과는 ['유재석', '조세호', '박명수', '하하'] 
+
+#     #정형돈씨를 유재석씨와 조세호씨 사이에 태워봄
+# subway.insert(1,"정형돈")
+# print(subway)
+
+#     #지하철에 있는 사람을 한 명씩 뒤에서 꺼냄
+# subway.pop()
+# print(subway)
+# subway.pop()
+# print(subway)
+# subway.pop()
+# print(subway)
+# subway.pop()
+# print(subway)
+# subway.pop()
+# print(subway)                                    #여기까지 하면 배열이 텅 비어버린다.
+# subway.pop()                                     #여기서 부터는 오류가 발생하게 된다 아무것도 없는데 빼야하기 때문
+# print(subway)
+
+#     #같은 이름의 사람이 몇명 있는지 확인하기
+# subway.append("유재석")                            #중복된 이름을 위해 유재석 추가
+# print(subway)          
+# print(subway.count("유재석"))                      #유재석이라는 이름이 몇번 중복되었는가?
+
+#     #순서 정렬도 가능
+# num_list = [5,4,3,2,1]
+# num_list.sort()                                      #1,2,3,4,5 로 정렬
+# print(num_list)
+
+#     #순서 뒤집기도 가능
+# num_list.reverse()
+# print(num_list)                                      #5,4,3,2,1 로 정렬
+
+#     #다양한 자료형과 함께 사용 가능
+# mix_list = ["조세호", 20, True]                       #자료형의 형태와 상관 없이 섞어서 사용 가능
+# print(mix_list)     
+
+    # 리스트 확장 (두 리스트를 합치는 기능)
+num_list = [5,2,4,3,1]
+mix_list = ["조세호", 20, True]
+num_list.extend(mix_list)                             #[5, 2, 4, 3, 1, '조세호', 20, True] 두 리스트를 묶음
+print(num_list)
