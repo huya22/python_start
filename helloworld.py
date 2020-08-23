@@ -243,8 +243,52 @@
 # mix_list = ["조세호", 20, True]                       #자료형의 형태와 상관 없이 섞어서 사용 가능
 # print(mix_list)     
 
-    # 리스트 확장 (두 리스트를 합치는 기능)
-num_list = [5,2,4,3,1]
-mix_list = ["조세호", 20, True]
-num_list.extend(mix_list)                             #[5, 2, 4, 3, 1, '조세호', 20, True] 두 리스트를 묶음
-print(num_list)
+#     # 리스트 확장 (두 리스트를 합치는 기능) -.extend-
+# num_list = [5,2,4,3,1]
+# mix_list = ["조세호", 20, True]
+# num_list.extend(mix_list)                             #[5, 2, 4, 3, 1, '조세호', 20, True] 두 리스트를 묶음
+# print(num_list)
+
+# 사전
+# cabinet = {3: "유재석", 100:"김태호"}                      #3번 열쇠를 유재석씨가 받고 100번 열쇠를 김태호씨가 받는다고 생각해보자
+# print(cabinet[3])                                       #3번 열쇠를 출력하면 유재석이 출력되게 된다. 
+# print(cabinet[100])                                     #100번 열쇠를 출력하면 김태호가 출력되게 된다.
+
+# print(cabinet.get(3))                                   #print(cabinet[3])과 같은 결과
+# print(cabinet.get(100))                                 #print(cabinet[100])과 같은 결과
+
+# print(cabinet[5])                                       #cabinet안에 5라는 키가 없기 때문에 오류 발생 프로그램 멈춤
+# print(cabinet.get(5))                                   #이번의 경우에는 오류 발생 없이 None이라고 출력됨.
+# print(cabinet.get(5, "사용가능"))                         #None 출력 대신 다른 언급을 하고 싶을 경우?
+
+# print(3 in cabinet)                                     #3이라는 열쇠가 cabinet 안에 있으면 true 출력
+# print(5 in cabinet)                                     #5라는 열쇠가 cabinet 안에 없기 때문에 false 출력
+
+#     #또한 string도 키로 사용가능
+# cabinet = {"A-3": "유재석", "B-100":"김태호"} 
+
+#     #만일 새손님이 왔다면
+# print(cabinet)
+# cabinet["C-20"] = "조세호"                                 #원래 부터 없었다면 새로 추가 원래 있던 키였으면 업데이트
+# cabinet["A-3"] = "김종국"                                  #원래 부터 없었다면 새로 추가 원래 있던 키였으면 업데이트
+
+# print(cabinet)
+
+#     #손님이 간 경우
+# del cabinet["A-3"]
+# print(cabinet)
+
+#     #key들만 출력하고 싶은 경우
+# print(cabinet.keys())
+
+#     #value들만 출력하고 싶은 경우
+# print(cabinet.values())
+
+#     #key, value 쌍으로 출력하고자 하는 경우
+# print(cabinet.items())
+
+#     #cabinet 비우기
+# cabinet.clear()
+# print(cabinet)                                           #다 비어 있기 때문에 {}으로 출력된다.
+# print(cabinet.clear())                                   #None으로 출력된다. (차이점이 뭘까..?)
+
