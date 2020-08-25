@@ -292,3 +292,9 @@
 # print(cabinet)                                           #다 비어 있기 때문에 {}으로 출력된다.
 # print(cabinet.clear())                                   #None으로 출력된다. (차이점이 뭘까..?)
 
+# 튜플 (배열과 같은 기능)
+menu = ("돈까스", "치즈까스")
+print(menu[0])
+print(menu[1])
+
+    # 단 menu.add("생선까스")와 같이 add 기능은 없다.
