@@ -293,8 +293,45 @@
 # print(cabinet.clear())                                   #None으로 출력된다. (차이점이 뭘까..?)
 
 # 튜플 (배열과 같은 기능)
-menu = ("돈까스", "치즈까스")
-print(menu[0])
-print(menu[1])
+# menu = ("돈까스", "치즈까스")
+# print(menu[0])
+# print(menu[1])
 
-    # 단 menu.add("생선까스")와 같이 add 기능은 없다.
+#     # 단 menu.add("생선까스")와 같이 add 기능은 없다.
+#     # 선언 방식에 대하여
+# name = "김종국"
+# age = 20
+# hobby = "코딩"
+# print(name, age, hobby)
+# (name,age,hobby) = ("김종국",20,"코딩")                      #위처럼 하나하나 변수 선언 해서 할 수도 있지만 이 처럼 한번에 다 지정할 수 있다.
+# print(name, age, hobby)
+
+# 집합 (set)
+# 특징 : 중복 안됨, 순서 없음
+
+# my_set = {1,2,3,3,3}                                        # 중복이 되지 않는다.
+# print(my_set)                                               # 따라서 3이 반복 출력되지 않는다.
+
+# java = {"유재석", "김태호", "양세형"}
+# python = set(["유재석", "박명수"])
+
+#     #교집합 (java와 python 을 모두 할 수 있는 개발자)
+# print(java & python)
+# print(java.intersection(python))
+
+#     # 합집합 (java를 할 수 있거나 python도 할 수 있는 개발자)
+# print(java | python)                                        # {'박명수', '김태호', '유재석', '양세형'} 순서는 보장되지 않는다.
+# print(java.union(python))                                   # {'박명수', '김태호', '유재석', '양세형'} 순서는 보장되지 않는다.
+
+#     # 차집합(java는 할 줄 알지만 python을 할 줄 모르는 개발자)
+# print(java-python)
+# print(java.difference(python))
+
+#     # python을 할 줄 아는 사람이 늘어남 python에 추가하고 싶은 경우
+# python.add("김태호")
+# print(python)
+
+#     # java를 잊었어요 java의 원소 중 하나를 제거하고 싶을 때
+# java.remove("김태호")
+# print(java)
+
