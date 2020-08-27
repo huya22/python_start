@@ -335,3 +335,25 @@
 # java.remove("김태호")
 # print(java)
 
+# #자료구조의 변경
+# menu = {"커피", "우유", "주스"}
+# print(menu, type(menu))                                   #set이므로 {  }로 표현됨.
+
+# menu = list(menu)                                         #menu의 타입을 list로 만듬
+# print(menu, type(menu))                                   #list이므로 [  ]로 표현됨.
+
+# menu = tuple(menu)                                        #menu의 타입을 tuple로 만듬
+# print(menu, type(menu))                                   #tuple이므로 (  )로 표현됨.
+
+# menu = set(menu)                                          #menu의 타입을 set으로 만듬
+# print(menu,type(menu))
+
+# #퀴즈
+# #문제 풀이 (아직 나는 갈길이 멀었구나...)
+# from random import *
+# users = range(1,21)
+# users = list(users)
+# shuffle(users)
+# winners = sample(users, 4)
+# print("치킨 당첨자 {0}".format(winners[0]))
+# print("커피 당첨자 {0}".format(winners[1:4]))
